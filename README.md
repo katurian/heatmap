@@ -1,32 +1,4 @@
-# bias
-bias.py tokenizes a text file, then gives a sentiment polarity score (-1:1) to every word in the document. If any word has a score above or below 0, the variable **bias** = **bias + 1**. Once the for loop completes, bias.py divides **bias** by the total number of words in the document. The returned output represents the percentage of biased language in said *.txt, based on the python **textblob** package. 
-
-sentiment_heatmap.py can be used for comparing sentences within a text by their relative sentiment polarity and subjectivity.
-
-https://textblob.readthedocs.io/en/dev/quickstart.html#sentiment-analysis
-
-# Setup
-
-Install the dependencies listed in requirements.txt, e.g:
-```bash
-pip install -r requirements.txt
-```
-
-# Usage
-
-## Bias
-Call **bias.bias()** or execute bias.py with text file location as first argument. See some sample text files in **examples/** directory. Examples of usage:
-
-```python
-from bias import bias
-with open("./examples/breitbart_short.txt", 'r') as infile:
-    bias(infile)
-```
-
-```bash
-python bias.py ./examples/economist.txt
-```
-
+Source: Genesis-Root https://github.com/genesis-root
 ## Sentiment heatmap
 
 Call **sentiment_heatmap.get_heatmap()** with a text file object as argument to get a list of tuples of type `(s, pol, sub)`, where **s** is a **textblob.blob.Sentence**, **pol** is sentence's relative polarity, **sub** is sentence's relative subjectivity. E.g.:
